@@ -2,23 +2,18 @@
 /.pnp
 .pnp.js
 
-
 /coverage
 
-# production
 /build
 
-# misc
 .DS_Store
 /.idea
 
-# https://www.npmjs.com/package/dotenv#should-i-commit-my-env-file
 /.env
 
 /.seed_data
 /config.yml
 
-# https://www.npmjs.com/package/dotenv#should-i-have-multiple-env-files
 /.env.local
 /.env.development.local
 /.env.test.local
