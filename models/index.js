@@ -1,12 +1,15 @@
 "use strict";
 const User = require("./user");
+const Post = require("./post");
 
 async function init() {
-  await User.sync(); //sync the model
+  await User.sync();
+  await Post.sync();
 }
 
 init();
 
 module.exports = {
-  User, //export the model
+  User,
+  Post,
 };
