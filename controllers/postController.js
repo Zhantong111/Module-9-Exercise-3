@@ -1,6 +1,7 @@
 "use strict";
 
 const Models = require("../models");
+const { sequelize } = require("../models/user");
 
 const getPost = (res) => {
   Models.Post.findAll({})
@@ -42,9 +43,28 @@ const deletePost = (req, res) => {
     });
 };
 
+const addLikes = (data, res) => {
+  let criteria = {
+    where: {
+      id: data.postId,
+    },
+  };
+  let dataToUpdate = {
+    likes: sequelize.literal("likes + 1"),
+  };
+  Models.Post.update(dataToUpdate, criteria)
+    .then(function (data) {
+      res.send({ result: 200, data: data });
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
 module.exports = {
   getPost,
   createPost,
   updatePost,
   deletePost,
+  addLikes,
 };

@@ -11,11 +11,15 @@ router.post("/create", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Controllers.userController.updatePost(req, res);
+  Controllers.postController.updatePost(req, res);
 });
 
 router.delete("/:id", (req, res) => {
-  Controllers.userController.deletePost(req, res);
+  Controllers.postController.deletePost(req, res);
+});
+
+router.put("/addLikes", (req, res) => {
+  Controllers.postController.addLikes(req.body, res);
 });
 
 module.exports = router;
