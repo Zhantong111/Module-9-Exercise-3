@@ -5,6 +5,9 @@ let dbConnect = require("./dbConnect");
 
 app.use(express.json());
 
+let userRoutes = require("./routes/userRoutes");
+app.use("/api/users", userRoutes);
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to my SQL application." });
 });
