@@ -8,6 +8,9 @@ app.use(express.json());
 let userRoutes = require("./routes/userRoutes");
 app.use("/api/users", userRoutes);
 
+let postRoutes = require("./routes/postRoutes");
+app.use("/api/posts", postRoutes);
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to my SQL application." });
 });
